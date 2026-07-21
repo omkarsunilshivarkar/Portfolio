@@ -2,7 +2,7 @@
 
 A premium, highly interactive personal portfolio website designed to showcase frontend software engineering projects, technical skills, and background details. Built with a performance-first mindset using clean vanilla architecture.
 
-🌐 **Live Demo:** [omkar.shivarkar.portfolio](https://github.com/omkarsunilshivarkar/Portfolio) *(Add your deployed vercel/github-pages URL here)*
+🌐 **Live Demo:** [omkarshivarkar.vercel.app](https://omkarshivarkar.vercel.app/)
 
 ---
 
