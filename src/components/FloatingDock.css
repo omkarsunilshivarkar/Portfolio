@@ -86,3 +86,42 @@
   opacity: 1;
   transform: translateX(-50%) translateY(-8px);
 }
+
+@media (max-width: 600px) {
+  .dock-container {
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+
+  .dock {
+    justify-content: space-around;
+    gap: 0;
+    padding: 10px 16px;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #0f0f11;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .dock-item {
+    color: #94a3b8;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .dock-item-active {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .dock-icon-active {
+    color: #ffffff;
+  }
+
+  .dock-tooltip {
+    display: none;
+  }
+}
