@@ -110,11 +110,19 @@
     color: #94a3b8;
     background-color: transparent;
     border-color: transparent;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .dock-item-active {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .dock-icon,
+  .dock-icon-active {
+    width: 22px !important;
+    height: 22px !important;
   }
 
   .dock-icon-active {
