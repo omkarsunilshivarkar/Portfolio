@@ -242,8 +242,7 @@
     gap: 16px;
   }
   .short-bio {
-    text-align: center;
-    max-width: 100%;
+    display: none;
   }
   .display-container {
     height: 320px;
@@ -293,24 +292,21 @@
   .branding {
     font-size: 16px;
   }
-  .short-bio {
-    font-size: 13px;
-  }
   .display-container {
-    height: 240px;
+    height: 340px;
   }
   .giant-text-container {
     width: calc(100% + 32px);
     bottom: 25%;
   }
   .portrait-wrapper {
-    width: 340px;
-    height: 350px;
-    bottom: -30px;
+    width: 500px;
+    height: 510px;
+    bottom: -50px;
   }
   .portrait-img {
-    width: 220px;
-    height: 350px;
+    width: 320px;
+    height: 510px;
   }
   .floating-arrow {
     width: 44px;

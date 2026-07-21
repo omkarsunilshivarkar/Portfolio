@@ -8,7 +8,7 @@
 .contact-content {
   width: 100%;
   max-width: 1200px;
-  padding: 80px 60px 60px;
+  padding: 80px 60px 140px;
   /* Aligned with your 60px side offset edits */
   display: flex;
   flex-direction: column;
@@ -215,7 +215,7 @@
 
 @media (max-width: 990px) {
   .contact-content {
-    padding: 80px 24px 60px;
+    padding: 80px 24px 130px;
   }
   .contact-heading {
     font-size: 42px;
@@ -244,7 +244,7 @@
 
 @media (max-width: 500px) {
   .contact-content {
-    padding: 60px 16px 40px;
+    padding: 60px 16px 110px;
   }
   .contact-heading {
     font-size: 32px;
