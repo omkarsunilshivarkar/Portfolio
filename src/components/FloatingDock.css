@@ -98,7 +98,7 @@
   .dock {
     justify-content: space-around;
     gap: 0;
-    padding: 10px 16px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
     border-radius: 0;
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
