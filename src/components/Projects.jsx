@@ -165,7 +165,10 @@ export default function Projects() {
     <section id="projects" className="projects-container">
       <div className="projects-content">
         <div className="header-row">
-          <h2 className="projects-heading">Impressive Works</h2>
+          <h2 className="projects-heading">
+            <span className="projects-pulse"></span>
+            Impressive Works
+          </h2>
           <p className="projects-subtext">
             HERE'S A SELECTION OF PROJECTS THAT SHOWCASE MY PASSION FOR DESIGN AND DEVELOPMENT, REFLECTING CREATIVITY AND INNOVATION.
           </p>

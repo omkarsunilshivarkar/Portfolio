@@ -6,8 +6,7 @@
 }
 
 .hero-card {
-  background-color: #C6C6C6;
-  /* Light grey background */
+  background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(244, 63, 94, 0.1) 0%, transparent 50%), #0c0f16;
   border-radius: 0px;
   position: relative;
   padding: 32px;
@@ -15,7 +14,7 @@
   flex-direction: column;
   gap: 40px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .top-header {
@@ -31,7 +30,42 @@
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 18px;
-  color: #ffffff;
+  color: #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.branding-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.branding-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 .short-bio {
@@ -40,7 +74,7 @@
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.6;
-  color: #f3f4f6;
+  color: #94a3b8;
   text-align: right;
   letter-spacing: 0.01em;
 }
@@ -70,7 +104,9 @@
   font-family: var(--font-title);
   font-weight: 500;
   font-size: 16vw;
-  color: #ffffff;
+  background: linear-gradient(180deg, #ffffff 40%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   white-space: nowrap;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -134,7 +170,7 @@
 }
 
 .intro-container {
-  background-color: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -316,5 +352,104 @@
   }
   .intro-container {
     padding: 40px 16px;
+  }
+}
+
+/* 1. Dynamic Ambient Drift Layers inside the card */
+.hero-card::before,
+.hero-card::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* Indigo ambient light */
+.hero-card::before {
+  width: 300px;
+  height: 300px;
+  background-color: #6366f1;
+  top: 10%;
+  right: 10%;
+  animation: drift-indigo 14s infinite alternate ease-in-out;
+}
+
+/* Rose ambient light */
+.hero-card::after {
+  width: 250px;
+  height: 250px;
+  background-color: #f43f5e;
+  bottom: 10%;
+  left: 10%;
+  animation: drift-rose 10s infinite alternate ease-in-out;
+}
+
+/* Drift animations */
+@keyframes drift-indigo {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, 60px) scale(1.2); }
+  100% { transform: translate(-40px, -30px) scale(0.9); }
+}
+
+@keyframes drift-rose {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -60px) scale(0.85); }
+  100% { transform: translate(-20px, 40px) scale(1.15); }
+}
+
+/* 2. Breathing Glow on Floating Arrow */
+.floating-arrow {
+  animation: breathe-arrow 4s infinite ease-in-out;
+}
+
+@keyframes breathe-arrow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* 3. Initial Slide-up Entrance for Portrait */
+.portrait-img {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.portrait-img.loaded {
+  animation: slide-up-portrait 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-up-portrait {
+  from {
+    transform: translateY(40px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Initial slide-up for top headers */
+.top-header {
+  animation: slide-up-text 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-up-text {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

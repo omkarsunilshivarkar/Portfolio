@@ -4,6 +4,8 @@ import portraitImg from '../assets/1000116575.png';
 import './Hero.css';
 
 export default function Hero() {
+  const [imageLoaded, setImageLoaded] = React.useState(false);
+
   return (
     <header id="home" className="hero-wrapper">
 
@@ -11,7 +13,10 @@ export default function Hero() {
       <div className="hero-card">
         {/* Header Info inside the card */}
         <div className="top-header">
-          <div className="branding">@ Code by Omkar Shivarkar</div>
+          <div className="branding">
+            <span className="branding-pulse"></span>
+            @ Code by Omkar Shivarkar
+          </div>
           <div className="short-bio">
             Frontend Developer passionate about building scalable web applications and AI-powered products, where clean engineering meets thoughtful design to create exceptional digital experiences.          </div>
         </div>
@@ -27,7 +32,12 @@ export default function Hero() {
 
           {/* Centered Greyscale Portrait Overlap */}
           <div className="portrait-wrapper">
-            <img src={portraitImg} alt="Omkar Shivarkar" className="portrait-img" />
+            <img 
+              src={portraitImg} 
+              alt="Omkar Shivarkar" 
+              className={`portrait-img ${imageLoaded ? 'loaded' : ''}`} 
+              onLoad={() => setImageLoaded(true)}
+            />
           </div>
 
           {/* Floating Circle Arrow (Diagonal Arrow button next to the head) */}

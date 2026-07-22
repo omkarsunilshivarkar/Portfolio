@@ -238,7 +238,10 @@ function getIconFriendlyName(key) {
 export default function Skills() {
   return (
     <section id="skills" className="skills-section">
-      <h2 className="section-header">Skills that fuel my passion</h2>
+      <h2 className="section-header">
+        <span className="skills-pulse"></span>
+        Skills that fuel my passion
+      </h2>
 
       <div className="skills-bento-grid">
         {skillsList.map((category, idx) => (
