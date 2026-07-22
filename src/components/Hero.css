@@ -368,6 +368,10 @@
     bottom: 19%;
   }
 
+  .giant-text-track {
+    animation-duration: 30s;
+  }
+
   .portrait-wrapper {
     width: 600px;
     height: 610px;
