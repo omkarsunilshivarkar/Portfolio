@@ -92,13 +92,25 @@
 .giant-text-container {
   position: absolute;
   bottom: 30%;
-  left: 45%;
-  transform: translateX(-50%);
-  width: calc(100% + 64px);
-  text-align: center;
+  left: 0;
+  width: 100%;
   z-index: 3;
   pointer-events: none;
-  overflow: visible;
+  overflow: hidden;
+  display: flex;
+}
+
+.giant-text-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+.giant-text-track.running {
+  animation-play-state: running;
+  animation-delay: 1.4s;
 }
 
 .giant-text {
@@ -111,6 +123,7 @@
   white-space: nowrap;
   letter-spacing: -0.02em;
   line-height: 1;
+  display: inline-block;
 }
 
 .portrait-wrapper {
@@ -350,7 +363,8 @@
   }
 
   .giant-text-container {
-    width: calc(100% + 32px);
+    width: 100%;
+    left: 0;
     bottom: 19%;
   }
 
@@ -494,5 +508,14 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }

@@ -23,11 +23,12 @@ export default function Hero() {
 
         {/* Display Content Area */}
         <div className="display-container">
-          {/* Giant White Background Text */}
+          {/* Giant White Background Text (Seamless Marquee) */}
           <div className="giant-text-container">
-            <span className="giant-text">
-              e Developer &amp;
-            </span>
+            <div className={`giant-text-track ${imageLoaded ? 'running' : 'paused'}`}>
+              <span className="giant-text">Developer &amp; Frontend Engineer &amp; Product Builder &amp;&nbsp;</span>
+              <span className="giant-text">Developer &amp; Frontend Engineer &amp; Product Builder &amp;&nbsp;</span>
+            </div>
           </div>
 
           {/* Centered Greyscale Portrait Overlap */}
